@@ -1,24 +1,12 @@
 import java.io.File;
-
-public class S8B { 
-    static boolean checkTxt(String x){
-        int i = x.lastIndexOf('.');
-        String t;
-        if(i>0) 
-            t = x.substring(i+1);
-        else
-            return false;
-        if(t.equals("txt"))
-            return true;
-        return false;
-    }
-    public static void main(String[] args) {
-        File f = new File(".");
-        
-        String[] files = f.list();
-        for(String x:files){
-            if(checkTxt(x))
-                System.out.println(x);
-        }
-    }
+import java.io.IOException;
+public class S5B1 {
+   public static void main(String args[]) throws IOException {
+      File P = new File(".");
+      String c[] = P.list();
+      System.out.println("List of files and directories in the specified directory:");
+      for(int i=0; i<c.length; i++) {
+         System.out.println(c[i]);
+      }
+   }
 }
